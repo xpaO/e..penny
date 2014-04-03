@@ -55,11 +55,11 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #FA9E0E;
+$primary-color: #f08a24;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
-// $warning-color: #f08a24;
+$warning-color: #D90E09;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -484,7 +484,7 @@ $h1-font-size: rem-calc(40);
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color(#000, $lightness: 30%);
+$form-label-font-color: white;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
@@ -1130,7 +1130,7 @@ $h1-font-size: rem-calc(40);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #272727;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

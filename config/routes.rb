@@ -1,8 +1,10 @@
 PennyFound::Application.routes.draw do
-  
+  resources :users
+
   match '/faq',    to: 'static_pages#faq',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/signup',  to: 'users#new',            via: 'get'
 
   root "static_pages#home"
   # The priority is based upon order of creation: first created -> highest priority.

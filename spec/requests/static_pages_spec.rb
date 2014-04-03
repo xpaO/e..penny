@@ -24,16 +24,14 @@ describe "Static pages" do
     let(:heading) { "FAQ" }
     
     it_should_behave_like "all static pages"
-    it { should have_title('| FAQ') }
   end
 
   describe "About page" do
     before { visit about_path }
-    let(:page_title) { "About" }
+    let(:page_title) { "About us" }
     let(:heading) { "About" }
     
     it_should_behave_like "all static pages"
-    it { should have_title('| About') }
   end
 
   describe "Contact page" do
@@ -42,6 +40,19 @@ describe "Static pages" do
     let(:heading) { "Contact" }
     
     it_should_behave_like "all static pages"
-    it { should have_title('| Contact') }
+  end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    expect(page).to have_title(full_title('About us'))
+    click_link "FAQ"
+    expect(page).to have_title(full_title('FAQ'))
+    click_link "Contact"
+    expect(page).to have_title(full_title('Contact'))
+    click_link "EVE Penny"
+    expect(page).to have_title(full_title(''))
+    click_link "Sign up"
+    expect(page).to have_title(full_title('Sign up'))
   end
 end
