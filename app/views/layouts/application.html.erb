@@ -10,7 +10,7 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-  <% if request.headers["HTTP_EVE_TRUSTED"] == "Yes" %>
+  <% if site_trusted? %>
   <body>
   <% else %> 
   <body onload="CCPEVE.requestTrust('http://localhost:3000')">

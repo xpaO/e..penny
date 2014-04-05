@@ -1,5 +1,15 @@
 <%= render 'shared/error_messages', object: f.object %>
 
+<%= f.label :character_name, "Character Name" %>
+<%= f.text_field :character_name, 
+                  value: request.headers["HTTP_EVE_CHARNAME"],
+                  readonly: true %>
+
+<%= f.label :character_id, "Character ID" %>
+<%= f.text_field :character_id, 
+                  value: request.headers["HTTP_EVE_CHARID"],
+                  readonly: true %>
+
 <%= f.label :email %>
 <%= f.text_field :email %>
 

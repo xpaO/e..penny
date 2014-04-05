@@ -5,9 +5,15 @@ describe "User pages" do
   subject { page }
 
   describe "signup" do
-
-    before { visit signup_path }
-
+    before do
+      Capybara.register_driver :rack_test do |app|
+        Capybara::RackTest::Driver.new(app, 
+                                  :headers => { 'HTTP_EVE_CHARID' => 4587675, 
+                                  'HTTP_EVE_TRUSTED' => 'Yes',
+                                  'HTTP_EVE_CHARNAME' => 'Jack Sparrow' })
+      end
+      visit signup_path
+    end
     let(:submit) { "Create my account" }
 
     describe "with invalid information" do
@@ -19,7 +25,7 @@ describe "User pages" do
         before { click_button submit }
 
         it { should have_title('Sign up') }
-        it { should have_content('error') }
+        it { should have_content('failed') }
       end
 
     end
@@ -33,7 +39,7 @@ describe "User pages" do
 
       # describe "after saving the user" do
       #   before { click_button submit }
-      #   let(:user) { User.find_by(email: 'user@example.com') }
+      #   let(:user) { User.find_by(ema]il: 'user@example.com') }
 
       #   it { should have_link('Sign out') }
       #   it { should have_title(user.name) }

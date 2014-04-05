@@ -13,6 +13,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.1.0'
 gem 'turbolinks', '2.2.1'
 gem 'jbuilder', '1.5.3'
+gem "rack-test"
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
@@ -24,7 +25,7 @@ end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'capybara'
   gem 'rb-notifu', '0.0.4'
   gem 'wdm', '0.1.0'
   gem 'factory_girl_rails', '4.2.1'

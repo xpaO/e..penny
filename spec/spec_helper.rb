@@ -12,6 +12,7 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
   require 'capybara/rails'
+  require 'rack/test'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -49,6 +50,7 @@ Spork.prefork do
   #     --seed 1234
     config.order = "random"
     config.include Capybara::DSL
+    config.include Rack::Test::Methods
   end
 end
 
