@@ -11,10 +11,14 @@ class UsersController < ApplicationController
     if @user.save
       #sign_in @user
       flash[:success] = "Welcome to EVE Penny"
-      redirect_to root_path
+      redirect_to @user
     else
       render 'new'
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
   
   private

@@ -20,7 +20,10 @@
     <div class="row">
       <!-- PAGE -->
       <div class="large-9 columns content">
-        <%= yield %>
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "alert-box #{key}") %>
+      <% end %>
+      <%= yield %>
       </div>
       <!-- TAB WITH RECENT WINNERS -->
       <div class="large-2 columns content">
