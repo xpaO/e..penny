@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  before do
+    Capybara.register_driver :rack_test do |app|
+      Capybara::RackTest::Driver.new(app, 
+                                :headers => { 'HTTP_EVE_TRUSTED' => 'Yes' })
+    end
+  end
+
   subject { page }
 
   shared_examples_for "all static pages" do
